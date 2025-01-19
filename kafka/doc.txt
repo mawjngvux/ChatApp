@@ -1,0 +1,12 @@
+- kafka
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties 
+.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic myFirstTopic
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic myFirstTopic
+
+- kafkachat
+mvn spring-boot:run
+
+- chat-ui
+set NODE_OPTIONS=--openssl-legacy-provider
+npm start
